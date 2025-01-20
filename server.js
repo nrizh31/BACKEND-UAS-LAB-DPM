@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
-const connectDB = require('./config/db');
+const connectDB = require('./src/config/db');
 
 // Load environment variables
 dotenv.config();
@@ -17,8 +17,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Routes
-app.use('/api/users', require('./routes/UserRoutes'));
-app.use('/api/explore', require('./routes/ExploreRoutes')); // Tambahkan rute explore
+app.use('/api/users', require('./src/routes/UserRoutes'));
+app.use('/api/explore', require('./src/routes/ExploreRoutes')); // Tambahkan rute explore
 
 // Default route
 app.get('/', (req, res) => {
